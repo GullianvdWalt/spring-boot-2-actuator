@@ -15,4 +15,5 @@ public class IndexController {
     public String getTestEndPoint(){
         return "Welcome to Spring boot 2 Actuator example";
     }
+
 }
