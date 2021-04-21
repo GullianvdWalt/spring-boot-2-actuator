@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RequestMapping("/spring-boot-actuator")
 public class IndexController {
 
-    @GetMapping
+    @GetMapping("/test")
     public String getTestEndPoint(){
         return "Welcome to Spring boot 2 Actuator example";
     }
