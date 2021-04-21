@@ -16,13 +16,13 @@ import java.net.URLConnection;
 public class HealthMetrics implements HealthIndicator {
     @Override
     public Health getHealth(boolean includeDetails) {
-        return HealthIndicator.super.getHealth(includeDetails);
+        return checkInternet() ? Health.up().withDetail("success code", "Healthy internet connection!").build() :
+                Health.down().withDetail("error code", "Internet connection is down!").build();
     }
 
     @Override
     public Health health() {
-        return checkInternet() ? Health.up().withDetail("success code", "Healthy internet connection!").build() :
-                Health.down().withDetail("error code", "Healthy internet connection!").build();
+        return null;
     }
 
     private boolean checkInternet(){
